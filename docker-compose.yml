@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  user-service:
+    build:
+      dockerfile: Dockerfile
+      context: ./UserService
+      target: dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./UserService:/app
+    networks:
+      - backend 
